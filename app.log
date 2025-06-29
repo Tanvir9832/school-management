@@ -1,0 +1,10 @@
+{"level":"info","msg":"Logger initialized with level=debug format=json","time":"2025-06-29T13:07:53+06:00"}
+{"level":"debug","msg":"This is a debug message","time":"2025-06-29T13:07:53+06:00"}
+{"level":"info","msg":"Server started successfully","time":"2025-06-29T13:07:53+06:00"}
+{"level":"warning","msg":"Disk space running low","time":"2025-06-29T13:07:53+06:00"}
+{"level":"error","msg":"Failed to connect to database","time":"2025-06-29T13:07:53+06:00"}
+time="2025-06-29T13:08:11+06:00" level=info msg="Logger initialized with level=debug format=text"
+time="2025-06-29T13:08:11+06:00" level=debug msg="This is a debug message"
+time="2025-06-29T13:08:11+06:00" level=info msg="Server started successfully"
+time="2025-06-29T13:08:11+06:00" level=warning msg="Disk space running low"
+time="2025-06-29T13:08:11+06:00" level=error msg="Failed to connect to database"

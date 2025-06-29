@@ -1,14 +1,25 @@
 package controller
 
-import "management/store"
+import (
+	"management/store"
+	"management/utils"
+)
 
 type Server struct {
 	db store.StoreOperations
 }
 
 func (s *Server) NewServer(pgSotre store.Postgres) {
+	utils.SetLogger()
+
+	utils.Logger.Infof("Logger setup done ... \n")
 	s.db = &pgSotre
-	s.db.NewStore()
+	err := s.db.NewStore()
+	if err != nil {
+		utils.Logger.Errorf("Issue found in database connection")
+	} else {
+		utils.Logger.Info("No issue in database connection")
+	}
 }
 
 type ServerOperations interface {
