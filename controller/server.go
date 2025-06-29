@@ -1,6 +1,7 @@
 package controller
 
 import (
+	"management/model"
 	"management/store"
 	"management/utils"
 )
@@ -16,9 +17,9 @@ func (s *Server) NewServer(pgSotre store.Postgres) {
 	s.db = &pgSotre
 	err := s.db.NewStore()
 	if err != nil {
-		utils.Logger.Errorf("Issue found in database connection")
+		utils.Log(model.LogLevelError, model.Controller, model.NewServer, "database connection failed!", err)
 	} else {
-		utils.Logger.Info("No issue in database connection")
+		utils.Log(model.LogLevelInfo, model.Controller, model.NewServer, "database connected", nil)
 	}
 }
 
