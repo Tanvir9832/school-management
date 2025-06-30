@@ -27,5 +27,15 @@ func (store *Postgres) NewStore() error {
 		utils.Log(model.LogLevelInfo, model.Store, model.NewStore, "database connected", nil)
 		store.DB = db
 	}
+	err = db.AutoMigrate(
+		model.User{},
+	)
+
+	if err != nil {
+		utils.Log(model.LogLevelError, model.Store, model.NewStore, "auto migration failed", err)
+	} else {
+		utils.Log(model.LogLevelInfo, model.Store, model.NewStore, "auto migration completed", nil)
+	}
+
 	return nil
 }
