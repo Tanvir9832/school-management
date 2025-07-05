@@ -16,6 +16,7 @@ var (
 )
 
 var (
-	NewServer = "newServer"
-	NewStore  = "newStore"
+	NewServer  = "newServer"
+	NewStore   = "newStore"
+	CreateUser = "createUser"
 )

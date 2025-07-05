@@ -19,7 +19,7 @@ type User struct {
 }
 
 type Name struct {
-	FirstName  string
+	FirstName  string `gorm:"not null"`
 	MiddleName string
 	LastName   string
 }
@@ -33,15 +33,15 @@ type Address struct {
 type UserRole string
 
 const (
-	RoleStudent UserRole = "student"
-	RoleFaculty UserRole = "faculty"
-	RoleMLS     UserRole = "mls"
-	RoleGurdian UserRole = "gurdian"
+	RoleStudent  UserRole = "student"
+	RoleFaculty  UserRole = "faculty"
+	RoleMLS      UserRole = "mls"
+	RoleGuardian UserRole = "guardian"
 )
 
 func (r UserRole) IsUserRoleValid() bool {
 	switch r {
-	case RoleStudent, RoleFaculty, RoleGurdian, RoleMLS:
+	case RoleStudent, RoleFaculty, RoleGuardian, RoleMLS:
 		return true
 	}
 	return false

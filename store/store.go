@@ -14,6 +14,8 @@ type Postgres struct {
 
 type StoreOperations interface {
 	NewStore() error
+	CreateUser(*model.User) error
+	UpdateUser(*model.User) error
 }
 
 func (store *Postgres) NewStore() error {
